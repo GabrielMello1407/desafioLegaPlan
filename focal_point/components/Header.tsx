@@ -1,31 +1,24 @@
-'use client';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-
+// Header.js
 import styles from './Header.module.scss';
+import Image from 'next/image';
 
 export default function Header() {
-  const [currentDate, setCurrentDate] = useState('');
-
-  // Função para pegar a data do local desejado
-  useEffect(() => {
-    const formatDate = () => {
-      const today = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        weekday: 'long',
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      };
-      return today.toLocaleDateString('pt-BR', options);
-    };
-
-    setCurrentDate(formatDate());
-  }, []);
-
+  // formatação da data para começar com letra maiúscula
+  const formatDate = (dateString: string) => {
+    return dateString.charAt(0).toUpperCase() + dateString.slice(1);
+  };
+  // recebendo a data local
+  const currentDate = formatDate(
+    new Date().toLocaleDateString('pt-BR', {
+      weekday: 'long',
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    }),
+  );
   return (
     <nav className={styles.nav}>
-      <ul className={styles.ul}>
+      <ul className={styles.navList}>
         <li className={styles.logo}>
           <a href="/">
             <Image
