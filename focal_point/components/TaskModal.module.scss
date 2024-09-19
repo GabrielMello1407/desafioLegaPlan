@@ -1,0 +1,147 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  @media(max-width: 600px){   
+  width:320px;
+  height:690px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  }
+}
+.modalContent {
+  background: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  width: 450px;
+  height: 286px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modalContent h2 {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.04px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin: 0;
+  width: 100%;
+}
+.modalContent label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  text-align: left;
+  width: 386px;
+  height: auto;
+  gap: 8px;
+}
+.modalContent label span {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29.04px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin: 0;
+}
+.modalContent input {
+  width: 386px;
+  height: 51px;
+  padding: 16px;
+  border: 1px solid #D7DDE9;
+  border-radius: 8px;
+}
+
+.inputField {
+  padding: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+}
+.cancelButton {
+  font-family: 'Inter Tight',sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  width: 185px;
+  height: 51px;
+  padding: 16px 24px;
+  border-radius: 8px ;
+  background: #E7EEFB;
+  border: none;
+  opacity: 1;
+  cursor: pointer;
+  
+  &:hover {
+    background: #D0E2F0;
+  }
+}
+.confirmButton {
+  font-family: 'Inter Tight',sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  width: 185px;
+  height: 51px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0796D3 0%, #53C0F0 68.65%);
+  border: none;
+  opacity: 1;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(90deg, #005bb5 0%, #3aa0d0 68.65%);
+  }
+}
+
+@media (max-width: 600px) {
+  .modalOverlay {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding-top: 0;
+  }
+
+  .modalContent {
+    width: 320px;
+    max-height: 690px;
+    padding: 24px;
+    top: 0;
+    left: 0;
+    transform: none;
+    box-shadow: none;
+  }
+  .modalContent input {
+    width: 272px;
+    height: 51px;
+    padding: 16px;
+    border: 1px solid #D7DDE9;
+    gap: 16px;
+    border-radius: 8px;
+  }
+  .buttonContainer {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cancelButton, .confirmButton {
+    width: 100%;
+  }
+}
