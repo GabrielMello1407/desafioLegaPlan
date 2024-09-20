@@ -44,7 +44,7 @@
 }
 
 /* Media query para telas com largura de 320px ou menor */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 600px) {
   .nav {
     flex-direction: column;
     border-bottom: 1px solid #ccc;
